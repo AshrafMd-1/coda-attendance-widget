@@ -41,7 +41,14 @@ const SubjectSchema = coda.makeObjectSchema({
   },
   displayProperty: "Name",
   idProperty: "Code",
-  featuredProperties: ["Conduct", "Attend", "Percentage", "Status"],
+  featuredProperties: [
+    "Type",
+    "Category",
+    "Conduct",
+    "Attend",
+    "Percentage",
+    "Status",
+  ],
 });
 
 pack.addSyncTable({
