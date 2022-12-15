@@ -1,3 +1,5 @@
+import enc = require("./secure.js");
+
 import * as coda from "@codahq/packs-sdk";
 export const pack = coda.newPack();
 
@@ -67,10 +69,9 @@ pack.addSyncTable({
 
     execute: async function ([username, password], context) {
       let baseUrl = "https://6o5evn.deta.dev/api/samvidha/attend/dis/v1";
-      let url = coda.withQueryParams(baseUrl, {
-        username: username,
-        password: password,
-      });
+      let eData = "username=" + username + "&password=" + password;
+      let encryptData = enc.encrypt(eData);
+      let url = baseUrl + "?code=" + encryptData;
       let response = await context.fetcher.fetch({
         method: "GET",
         url: url,
