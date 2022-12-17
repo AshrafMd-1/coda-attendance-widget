@@ -1,7 +1,7 @@
 import * as coda from "@codahq/packs-sdk";
 export const pack = coda.newPack();
 
-pack.addNetworkDomain("6o5evn.deta.dev");
+pack.addNetworkDomain("jrpfz1.deta.dev");
 
 const SubjectSchema = coda.makeObjectSchema({
   properties: {
@@ -73,7 +73,7 @@ pack.addSyncTable({
     ],
 
     execute: async function ([username, password], context) {
-      let baseUrl = "https://6o5evn.deta.dev/api/samvidha/attend/dis/v1";
+      let baseUrl = "https://jrpfz1.deta.dev/api/samvidha/attend/dis/v1";
       let url = `${baseUrl}?username=${username}&password=${password}`;
       let response = await context.fetcher.fetch({
         method: "GET",
